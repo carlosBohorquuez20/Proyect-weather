@@ -10,7 +10,6 @@ function App() {
   const [weather, setWeather] = useState({});
   const [ischange, setIsChange] = useState(true)
   const [isChangeGrados, setChangeGrados] = useState(true);
-
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
@@ -36,23 +35,28 @@ function App() {
 
   switch (weather.weather?.[0].main) {
     case "Thunderstorm":
-      source.src = '../src/assets/video/thunder.mp4';
+      source.src = './src/assets/video/thunder.mp4';
+      source.type = "video/mp4"
       break;
 
     case "Clouds":
-      source.src = {nube};
+      source.src =  './src/assets/video/clouds.mp4';
+      source.type = "video/mp4"
       break;
 
     case "Rain":
-      source.src = '../src/assets/video/rain.mp4';
+      source.src = './src/assets/video/rain.mp4';
+      source.type = "video/mp4"
       break;
 
     case "Snow":
-      source.src = '../src/assets/video/snow.mp4';
+      source.src = './src/assets/video/snow.mp4';
+      source.type = "video/mp4"
       break;
 
     case "Clear":
-      source.src = '../src/assets/video/sunny.mp4';
+      source.src = './src/assets/video/sunny.mp4';
+      source.type = "video/mp4"
       break;
   }
 
