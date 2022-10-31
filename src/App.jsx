@@ -1,9 +1,11 @@
-import { useState, useEffect, CSSProperties } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import axios from 'axios'
+import { useState, useEffect, CSSProperties } from 'react';
+import reactLogo from './assets/react.svg';
+import './App.css';
+import axios from 'axios';
 import Typewriter from "typewriter-effect";
 import HashLoader from "react-spinners/HashLoader";
+import nube from './assets/video/clouds.mp4';
+import person from './assets/img/person.png'
 function App() {
   const [weather, setWeather] = useState({});
   const [ischange, setIsChange] = useState(true)
@@ -38,7 +40,7 @@ function App() {
       break;
 
     case "Clouds":
-      source.src = '../src/assets/video/clouds.mp4';
+      source.src = {nube};
       break;
 
     case "Rain":
@@ -108,7 +110,7 @@ function App() {
           </div>
           <div className='person-box'>
             <div>
-              <img src="../src/assets/img/person.png" alt="person" className='person-config' />
+              <img src={person} alt="person" className='person-config' />
             </div>
             <div className='bubble'>
               <Typewriter
