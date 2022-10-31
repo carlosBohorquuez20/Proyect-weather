@@ -34,23 +34,23 @@ function App() {
 
   switch (weather.weather?.[0].main) {
     case "Thunderstorm":
-      source.src = './src/assets/video/thunder.mp4';
+      source.src = '../src/assets/video/thunder.mp4';
       break;
 
     case "Clouds":
-      source.src = './src/assets/video/clouds.mp4';
+      source.src = '../src/assets/video/clouds.mp4';
       break;
 
     case "Rain":
-      source.src = './src/assets/video/rain.mp4';
+      source.src = '../src/assets/video/rain.mp4';
       break;
 
     case "Snow":
-      source.src = './src/assets/video/snow.mp4';
+      source.src = '../src/assets/video/snow.mp4';
       break;
 
     case "Clear":
-      source.src = './src/assets/video/sunny.mp4';
+      source.src = '../src/assets/video/sunny.mp4';
       break;
   }
 
@@ -108,7 +108,7 @@ function App() {
           </div>
           <div className='person-box'>
             <div>
-              <img src="./src/assets/img/person.png" alt="person" className='person-config' />
+              <img src="../src/assets/img/person.png" alt="person" className='person-config' />
             </div>
             <div className='bubble'>
               <Typewriter
