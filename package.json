@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy":"vite buils",
+    "predeploy": "vite buils",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-player": "^2.11.0",
     "react-spinners": "^0.13.6",
     "typed.js": "^2.0.12",
     "typewriter-effect": "^2.19.0"

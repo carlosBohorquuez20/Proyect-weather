@@ -4,12 +4,17 @@ import './App.css';
 import axios from 'axios';
 import Typewriter from "typewriter-effect";
 import HashLoader from "react-spinners/HashLoader";
-import nube from './assets/video/clouds.mp4';
+import clouds from './assets/img/clouds.gif';
+import rain from './assets/img/rain.gif';
+import snow from './assets/img/snow.gif';
+import sunny from './assets/img/sunny.gif';
+import thunder from './assets/img/thunder.gif';
 import person from './assets/img/person.png'
 function App() {
   const [weather, setWeather] = useState({});
   const [ischange, setIsChange] = useState(true)
   const [isChangeGrados, setChangeGrados] = useState(true);
+  const [videos, setVideos] = useState("");
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
@@ -24,41 +29,33 @@ function App() {
         .then((res) => setWeather(res.data));
     }
     navigator.geolocation.getCurrentPosition(success);
+
+ 
   }, [])
-
-  const [loading, setLoading] = useState(false);
-
-  const source = document.createElement('source')
-  const screen = document.getElementById('screen')
-  screen.appendChild(source);
-
 
   switch (weather.weather?.[0].main) {
     case "Thunderstorm":
-      source.src = './src/assets/video/thunder.mp4';
-      source.type = "video/mp4"
+      document.body.style.backgroundImage = `url(${thunder})`
       break;
 
     case "Clouds":
-      source.src =  './src/assets/video/clouds.mp4';
-      source.type = "video/mp4"
+      document.body.style.backgroundImage = `url(${clouds})`
       break;
 
     case "Rain":
-      source.src = './src/assets/video/rain.mp4';
-      source.type = "video/mp4"
+      document.body.style.backgroundImage = `url(${rain})`
       break;
 
     case "Snow":
-      source.src = './src/assets/video/snow.mp4';
-      source.type = "video/mp4"
+      document.body.style.backgroundImage = `url(${snow})`
       break;
 
     case "Clear":
-      source.src = './src/assets/video/sunny.mp4';
-      source.type = "video/mp4"
+      document.body.style.backgroundImage = `url(${sunny})`
       break;
   }
+
+  const [loading, setLoading] = useState(false);
 
   const gradosKelvin = weather.main?.temp
   const gradosCentigrados = parseInt(gradosKelvin - 273.15);
@@ -80,6 +77,7 @@ function App() {
         />
         :
         <div className='weather-box'>
+      
           <div className="App">
             <div className='content-box'>
               <div className='top-content'>
@@ -134,3 +132,13 @@ function App() {
 export default App
 
 
+      /**          <div className="abosulete">
+            <ReactPlayer
+          className='react-player'
+          url={videos}
+          width='100%'
+          height='100%'
+        />
+             
+             </div>
+             */
