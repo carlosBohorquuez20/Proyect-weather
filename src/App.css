@@ -36,15 +36,21 @@ body {
 
 
 .weather-box {
-  width: 100%;
+  width: 90%;
   height: 650px;
   display: flex;
-
+  background-color: rgba(255, 255, 255, .5);
   z-index: 10;
   border-radius: 50px;
   padding: 20px;
 }
-
+@media (max-width: 956px) {
+  .weather-box {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+  }
+}
 
 @media (max-width: 480px) {
   .weather-box {
@@ -203,6 +209,7 @@ body {
   height: 50vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  
 }
 
 @media (max-width: 956px) {
@@ -217,6 +224,7 @@ body {
   height: 450px;
   transform: translatey(150px);
   border-bottom: 10px solid black;
+  border-radius: 10px;
 }
 
 @media (max-width: 956px) {
