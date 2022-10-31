@@ -14,7 +14,7 @@ function App() {
   const [weather, setWeather] = useState({});
   const [ischange, setIsChange] = useState(true)
   const [isChangeGrados, setChangeGrados] = useState(true);
-  const [videos, setVideos] = useState("");
+
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
@@ -108,19 +108,19 @@ function App() {
             </div>
           </div>
           <div className='person-box'>
-            <div>
-              <img src={person} alt="person" className='person-config' />
+              <div>
+                <img src={person} alt="person" className='person-config' />
+              </div>
+              <div className='bubble'>
+                <Typewriter
+                  options={{
+                    autoStart: true,
+                    loop: true,
+                    delay: 40,
+                    strings: `Good morning everyone, today's weather has a temperature of ${ischange ? gradosFahrenheit : gradosCentigrados} ${isChangeGrados ? "°F" : "°C"} whit an wind speed of ${weather.wind?.speed} m/s, with a ${weather.clouds?.all}% probability of cloudy and a humidity of ${weather.main?.humidity}% `,
+                  }} />
+              </div>
             </div>
-            <div className='bubble'>
-              <Typewriter
-                options={{
-                  autoStart: true,
-                  loop: true,
-                  delay: 40,
-                  strings: `Good morning everyone, today's weather has a temperature of ${ischange ? gradosFahrenheit : gradosCentigrados} ${isChangeGrados ? "°F" : "°C"} whit an wind speed of ${weather.wind?.speed} m/s, with a ${weather.clouds?.all}% probability of cloudy and a humidity of ${weather.main?.humidity}% `,
-                }} />
-            </div>
-          </div>
         </div>
       }
     </>
