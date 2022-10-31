@@ -30,7 +30,7 @@ function App() {
     }
     navigator.geolocation.getCurrentPosition(success);
 
- 
+
   }, [])
 
   switch (weather.weather?.[0].main) {
@@ -65,8 +65,6 @@ function App() {
     setChangeGrados(!isChangeGrados)
   }
 
-  console.log(weather);
-
   return (
     <>
       {loading ?
@@ -77,7 +75,6 @@ function App() {
         />
         :
         <div className='weather-box'>
-      
           <div className="App">
             <div className='content-box'>
               <div className='top-content'>
@@ -130,15 +127,3 @@ function App() {
   )
 }
 export default App
-
-
-      /**          <div className="abosulete">
-            <ReactPlayer
-          className='react-player'
-          url={videos}
-          width='100%'
-          height='100%'
-        />
-             
-             </div>
-             */
